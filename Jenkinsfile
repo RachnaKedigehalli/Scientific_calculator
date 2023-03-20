@@ -33,10 +33,6 @@ pipeline {
                 installation: 'Ansible',
                 inventory: 'inventory',
                 playbook: 'playbook.yml'
-//                 becomeUser: null,
-//                 colorized: true,
-//                 disableHostKeyChecking: true,
-//                 sudoUser: null
                 )
             }
         }
