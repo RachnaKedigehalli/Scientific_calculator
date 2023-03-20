@@ -29,14 +29,15 @@ pipeline {
 
         stage('Deploy'){
             steps {
-                ansiblePlaybook
-                becomeUser: null,
-                colorized: true,
-                disableHostKeyChecking: true,
+                ansiblePlaybook(
                 installation: 'Ansible',
                 inventory: 'inventory',
-                playbook: 'playbook.yml',
-                sudoUser: null
+                playbook: 'playbook.yml'
+//                 becomeUser: null,
+//                 colorized: true,
+//                 disableHostKeyChecking: true,
+//                 sudoUser: null
+                )
             }
         }
     }
