@@ -14,11 +14,13 @@ public class ScientificCalculator {
         System.out.println("---------------------Simple Scientific Calculator---------------------");
         System.out.println("Choose an operation (Enter the corresponding number)");
         System.out.println("1. Square root");
+        System.out.println("2. Factorial");
         System.out.println("Enter 0 to exit");
 
         int op = sc.nextInt();
         Operations operations = new Operations();
 
+        double x=0.0, y=0.0, answer=0.0;
         try {
             switch (op) {
                 case 0:
@@ -26,10 +28,18 @@ public class ScientificCalculator {
                     return;
                 case 1:
                     System.out.println("Square root of? ");
-                    double x = sc.nextDouble();
-                    double answer = operations.sqRoot(x);
+                    x = sc.nextDouble();
+                    answer = operations.sqRoot(x);
                     logger.info("[SQ ROOT], "+ x + ", " + 0.0 + ", " + answer);
-                    System.out.println("Square root of "+ x + " is " + answer);
+                    System.out.println("Square root of "+ x + " is " + answer + "\n");
+                    menu();
+                    break;
+                case 2:
+                    System.out.println("Factorial of? ");
+                    x = sc.nextDouble();
+                    answer = operations.factorial(x);
+                    logger.info("[FACTORIAL], "+ x + ", " + 0.0 + ", " + answer);
+                    System.out.println("Factorial of "+ x + " is " + answer + "\n");
                     menu();
                     break;
                 default:
@@ -40,7 +50,7 @@ public class ScientificCalculator {
             }
         }
         catch(ArithmeticException e) {
-            logger.warn("[INVALID_INPUT], " + 0.0 + ", " + 0.0 + ", " + 0.0);
+            logger.warn("[INVALID_INPUT], " + x + ", " + 0.0 + ", " + 0.0);
             System.out.println("Invalid input\n");
             menu();
         }
