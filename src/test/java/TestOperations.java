@@ -18,4 +18,14 @@ public class TestOperations {
             operations.sqRoot(-3);
         });
     }
+
+    @Test
+    public void testFactorial(){
+        assertEquals(0, operations.factorial(0), 0);
+        assertEquals(1, operations.factorial(1), 0);
+        assertEquals(6, operations.factorial(3), 0);
+        assertThrows(ArithmeticException.class, () -> {
+            operations.factorial(-3);
+        });
+    }
 }
