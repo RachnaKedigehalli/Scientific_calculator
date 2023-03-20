@@ -9,4 +9,15 @@ public class Operations {
         else 
             throw new ArithmeticException("Invalid input");
     }
+
+    public double factorial(double x) {
+        if(x>=0) {
+            double answer = 1;
+            for (int i=1; i<=x; i++)
+                answer *= i;
+            return answer;
+        }
+        else
+            throw new ArithmeticException("Invalid input");
+    }
 }
