@@ -1,7 +1,6 @@
-import Calculator.Operations;
+import calculator.Operations;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
 
 import static org.junit.Assert.*;
 public class TestOperations {
@@ -21,7 +20,7 @@ public class TestOperations {
 
     @Test
     public void testFactorial(){
-        assertEquals(0, operations.factorial(0), 0);
+        assertEquals(1, operations.factorial(0), 0);
         assertEquals(1, operations.factorial(1), 0);
         assertEquals(6, operations.factorial(3), 0);
         assertThrows(ArithmeticException.class, () -> {
