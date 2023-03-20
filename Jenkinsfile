@@ -21,9 +21,22 @@ pipeline {
         stage('Build docker image and publish to dockerhub') {
             steps {
                 sh 'docker build -t rachnask/scientific_calculator:latest .'
-                withDockerRegistry([credentialsId: 'mini_project_dockerhub_cred']) {
+                withDockerRegistry([credentialsId: 'mini_project_dockerhub_cred', url: ""]) {
                     sh 'docker push rachnask/scientific_calculator:latest'
                 }
+            }
+        }
+
+        stage('Deploy'){
+            steps {
+                ansiblePlaybook
+                becomeUser: null,
+                colorized: true,
+                disableHostKeyChecking: true,
+                installation: 'Ansible',
+                inventory: 'inventory',
+                playbook: 'playbook.yml',
+                sudoUser: null
             }
         }
     }

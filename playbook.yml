@@ -1,0 +1,18 @@
+- name: pull updated Scientific Calculator image
+  hosts: mini_project_hosts
+  tasks:
+    - name: stop all old containers
+      shell: docker ps -aq --filter=status=running | xargs -r docker stop
+
+    - name: remove all old stopped containers
+      shell: docker ps -aq --filter=status=exited | xargs -r docker rm
+
+    - name: remove old docker image
+      shell: docker images -q --filter=reference="samaelarch/mini_project" | xargs -r docker rmi -f
+
+    - name: pull updated image
+      docker_image:
+        name: rachnask/scientific_calculator
+        source: pull
+    - name: creating updated container
+      shell: docker run -id rachnask/scientific_calculator
