@@ -14,6 +14,7 @@ public class ScientificCalculator {
         System.out.println("Choose an operation (Enter the corresponding number)");
         System.out.println("1. Square root");
         System.out.println("2. Factorial");
+        System.out.println("3. Natural logarithm");
         System.out.println("Enter 0 to exit");
 
         int op = sc.nextInt();
@@ -39,6 +40,14 @@ public class ScientificCalculator {
                     answer = operations.factorial(x);
                     logger.info("[FACTORIAL] "+ x + " " + 0.0 + " " + answer);
                     System.out.println("Factorial of "+ x + " is " + answer + "\n");
+                    menu();
+                    break;
+                case 3:
+                    System.out.println("Natural logarithm of? ");
+                    x = sc.nextDouble();
+                    answer = operations.log(x);
+                    logger.info("[LOGARITHM] "+ x + " " + 0.0 + " " + answer);
+                    System.out.println("Natural logarithm of "+ x + " is " + answer + "\n");
                     menu();
                     break;
                 default:

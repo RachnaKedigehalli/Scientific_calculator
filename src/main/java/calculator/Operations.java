@@ -20,4 +20,12 @@ public class Operations {
         else
             throw new ArithmeticException("Invalid input");
     }
+
+    public double log(double x) {
+        if(x>0) {
+            return Math.log(x);
+        }
+        else
+            throw new ArithmeticException("Invalid input");
+    }
 }

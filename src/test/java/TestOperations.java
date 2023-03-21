@@ -27,4 +27,12 @@ public class TestOperations {
             operations.factorial(-3);
         });
     }
+
+    @Test
+    public void testLog(){
+        assertEquals(0, operations.log(1), 0);
+        assertThrows(ArithmeticException.class, () -> {
+            operations.log(0);
+        });
+    }
 }
