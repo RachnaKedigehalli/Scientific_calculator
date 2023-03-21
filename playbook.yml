@@ -8,7 +8,7 @@
       shell: docker ps -aq --filter=status=exited | xargs -r docker rm
 
     - name: remove old docker image
-      shell: docker images -q --filter=reference="samaelarch/mini_project" | xargs -r docker rmi -f
+      shell: docker images -q --filter=reference="rachnask/scientific_calculator" | xargs -r docker rmi -f
 
     - name: pull updated image
       docker_image:
