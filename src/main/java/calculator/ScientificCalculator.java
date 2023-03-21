@@ -5,7 +5,6 @@ public class ScientificCalculator {
     private static final Logger logger = Logger.getLogger(ScientificCalculator.class);
     public static void main(String[] args) {
         ScientificCalculator calc = new ScientificCalculator();
-        logger.info("Operation, Input1, Input2, Output");
         calc.menu();
     }
 
@@ -24,13 +23,13 @@ public class ScientificCalculator {
         try {
             switch (op) {
                 case 0:
-                    logger.info("[EXIT], " + 0.0 + ", " + 0.0 + ", " + 0.0);
+                    logger.info("[EXIT] " + 0.0 + " " + 0.0 + " " + 0.0);
                     return;
                 case 1:
                     System.out.println("Square root of? ");
                     x = sc.nextDouble();
                     answer = operations.sqRoot(x);
-                    logger.info("[SQ ROOT], "+ x + ", " + 0.0 + ", " + answer);
+                    logger.info("[SQ_ROOT] "+ x + " " + 0.0 + " " + answer);
                     System.out.println("Square root of "+ x + " is " + answer + "\n");
                     menu();
                     break;
@@ -38,19 +37,19 @@ public class ScientificCalculator {
                     System.out.println("Factorial of? ");
                     x = sc.nextDouble();
                     answer = operations.factorial(x);
-                    logger.info("[FACTORIAL], "+ x + ", " + 0.0 + ", " + answer);
+                    logger.info("[FACTORIAL] "+ x + " " + 0.0 + " " + answer);
                     System.out.println("Factorial of "+ x + " is " + answer + "\n");
                     menu();
                     break;
                 default:
-                    logger.warn("[INVALID_OP], " + 0.0 + ", " + 0.0 + ", " + 0.0);
+                    logger.warn("[INVALID_OP] " + 0.0 + " " + 0.0 + " " + 0.0);
                     System.out.println("Enter a valid operation number\n");
                     menu();
                     break;
             }
         }
         catch(ArithmeticException e) {
-            logger.warn("[INVALID_INPUT], " + x + ", " + 0.0 + ", " + 0.0);
+            logger.warn("[INVALID_INPUT] " + x + " " + 0.0 + " " + 0.0);
             System.out.println("Invalid input\n");
             menu();
         }
