@@ -15,6 +15,7 @@ public class ScientificCalculator {
         System.out.println("1. Square root");
         System.out.println("2. Factorial");
         System.out.println("3. Natural logarithm");
+//        System.out.println("4. Power");
         System.out.println("Enter 0 to exit");
 
         int op = sc.nextInt();
@@ -50,6 +51,16 @@ public class ScientificCalculator {
                     System.out.println("Natural logarithm of "+ x + " is " + answer + "\n");
                     menu();
                     break;
+//                case 4:
+//                    System.out.println("Base = ");
+//                    x = sc.nextDouble();
+//                    System.out.println("Power = ");
+//                    y = sc.nextDouble();
+//                    answer = operations.power(x, y);
+//                    logger.info("[POWER] "+ x + " " + y + " " + answer);
+//                    System.out.println("Power of "+ x + " raised to " + y + " is " + answer + "\n");
+//                    menu();
+//                    break;
                 default:
                     logger.warn("[INVALID_OP] " + 0.0 + " " + 0.0 + " " + 0.0);
                     System.out.println("Enter a valid operation number\n");

@@ -28,4 +28,8 @@ public class Operations {
         else
             throw new ArithmeticException("Invalid input");
     }
+
+    public double power(double x, double b) {
+        return Math.pow(x, b);
+    }
 }

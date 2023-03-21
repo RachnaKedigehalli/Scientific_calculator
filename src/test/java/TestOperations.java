@@ -35,4 +35,11 @@ public class TestOperations {
             operations.log(0);
         });
     }
+
+    @Test
+    public void testPower(){
+        assertEquals(4, operations.power(2, 2), 0);
+        assertEquals(0, operations.power(0, 4), 0);
+        assertEquals(1, operations.power(-2, 0), 0);
+    }
 }
